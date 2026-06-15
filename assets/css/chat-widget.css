@@ -1,5 +1,5 @@
 /* ── Floating bubble ── */
-  #chat-widget { position: fixed; bottom: 28px; right: 28px; z-index: 9998; font-family: 'Plus Jakarta Sans', sans-serif; }
+  #chat-widget { position: fixed; bottom: 28px; right: 28px; z-index: 9998; font-family: 'Vazirmatn', Tahoma, sans-serif; }
 
   #chat-bubble {
     width: 56px; height: 56px; border-radius: 9999px;

@@ -1,0 +1,61 @@
+/**
+ * rtl.css --- RTL layout overrides for Persian site ---
+ * تنظیمات راست‌چین برای سایت فارسی
+ */
+
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .material-symbols-outlined {
+  direction: ltr;
+}
+
+html[dir="rtl"] #back-to-top {
+  right: auto;
+  left: 1.75rem;
+}
+
+html[dir="rtl"] #chat-widget {
+  right: auto;
+  left: 28px;
+}
+
+html[dir="rtl"] #chat-box {
+  right: auto;
+  left: 0;
+}
+
+html[dir="rtl"] #chat-badge {
+  right: auto;
+  left: -4px;
+}
+
+html[dir="rtl"] #whatsapp-float {
+  right: auto;
+  left: 28px;
+}
+
+html[dir="rtl"] #chat-widget ~ #whatsapp-float,
+html[dir="rtl"] body:has(#chat-widget) #whatsapp-float {
+  bottom: 96px;
+}
+
+html[dir="rtl"] .icon-rtl-flip {
+  transform: scaleX(-1);
+}
+
+@keyframes marquee-rtl {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+html[dir="rtl"] .marquee-track {
+  animation-name: marquee-rtl;
+}
+
+html[dir="rtl"] .marquee-wrap {
+  mask-image: linear-gradient(to left, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to left, transparent, black 8%, black 92%, transparent);
+}

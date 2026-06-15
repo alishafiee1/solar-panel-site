@@ -66,24 +66,12 @@ tailwind.config = {
                 "card-internal": "40px"
         },
         "fontFamily": {
-                "label-caps": [
-                        "Plus Jakarta Sans"
-                ],
-                "headline-lg": [
-                        "Plus Jakarta Sans"
-                ],
-                "body-lg": [
-                        "Plus Jakarta Sans"
-                ],
-                "headline-md": [
-                        "Plus Jakarta Sans"
-                ],
-                "display-xl": [
-                        "Plus Jakarta Sans"
-                ],
-                "body-md": [
-                        "Plus Jakarta Sans"
-                ]
+                "label-caps": ["Vazirmatn", "Tahoma", "sans-serif"],
+                "headline-lg": ["Vazirmatn", "Tahoma", "sans-serif"],
+                "body-lg": ["Vazirmatn", "Tahoma", "sans-serif"],
+                "headline-md": ["Vazirmatn", "Tahoma", "sans-serif"],
+                "display-xl": ["Vazirmatn", "Tahoma", "sans-serif"],
+                "body-md": ["Vazirmatn", "Tahoma", "sans-serif"]
         },
         "fontSize": {
                 "label-caps": [
