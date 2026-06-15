@@ -102,7 +102,7 @@
 
 ---
 
-جزئیات فنی (ساختار فایل‌ها، لود partialها، رفتار دکمه‌ها، deploy) در `design.md` و `tasks.md` می‌آید — نه اینجا.
+جزئیات فنی (ساختار فایل‌ها، لود partialها، رفتار دکمه‌ها، deploy) در [`design.md`](design.md) و [`tasks.md`](tasks.md) می‌آید — نه اینجا.
 
 </div>
 

@@ -131,4 +131,8 @@ function initializeChatWidget() {
   });
 }
 
-initializeChatWidget();
+document.addEventListener('partials:loaded', initializeChatWidget);
+
+if (document.getElementById('chat-input')) {
+  initializeChatWidget();
+}

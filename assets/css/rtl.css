@@ -27,6 +27,10 @@ html[dir="rtl"] #chat-box {
   left: 0;
 }
 
+html[dir="rtl"] .icon-rtl-flip {
+  transform: scaleX(-1);
+}
+
 html[dir="rtl"] #chat-badge {
   right: auto;
   left: -4px;
@@ -35,15 +39,7 @@ html[dir="rtl"] #chat-badge {
 html[dir="rtl"] #whatsapp-float {
   right: auto;
   left: 28px;
-}
-
-html[dir="rtl"] #chat-widget ~ #whatsapp-float,
-html[dir="rtl"] body:has(#chat-widget) #whatsapp-float {
   bottom: 96px;
-}
-
-html[dir="rtl"] .icon-rtl-flip {
-  transform: scaleX(-1);
 }
 
 @keyframes marquee-rtl {
