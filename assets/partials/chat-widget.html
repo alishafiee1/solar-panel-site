@@ -1,0 +1,70 @@
+<div id="chat-widget">
+  <div id="chat-box">
+
+    <!-- Header -->
+    <div id="chat-header">
+      <button id="chat-back-btn" onclick="toggleChat()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div id="chat-header-title">AI Assistant</div>
+      <button id="chat-menu-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+      </button>
+    </div>
+
+    <!-- Messages -->
+    <div id="chat-messages">
+      <div class="msg bot">
+        <div class="msg-avatar bot">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.76 1.32 5.22 3.4 6.9L4 22l4.42-1.47A10 10 0 0012 21c5.52 0 10-4.02 10-9s-4.48-9-10-9z"/></svg>
+        </div>
+        <div class="msg-content">
+          <div class="msg-bubble">سلام! 👋 من پشتیبان هوشمند Rodi هستم. چطور می‌تونم کمکتون کنم؟</div>
+          <div class="msg-time" id="init-time"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick suggestions -->
+    <div id="chat-suggestions">
+      <button class="suggestion-chip" onclick="sendSuggestion('محصولات شما چیست؟')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        محصولات
+      </button>
+      <button class="suggestion-chip" onclick="sendSuggestion('قیمت‌گذاری را توضیح بده')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        قیمت‌گذاری
+      </button>
+      <button class="suggestion-chip" onclick="sendSuggestion('با پشتیبانی تماس بگیر')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.37 2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91A16 16 0 0 0 14 16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        تماس
+      </button>
+    </div>
+
+    <!-- n8n config -->
+    <div id="n8n-config-bar">
+      <div id="n8n-status-dot"></div>
+      <label>n8n URL:</label>
+      <input type="text" id="n8n-url-input" placeholder="https://your-n8n.com/webhook/xxx" />
+      <button onclick="saveN8nUrl()">ذخیره</button>
+    </div>
+
+    <!-- Footer -->
+    <div id="chat-footer">
+      <div id="chat-form">
+        <input type="text" id="chat-input" placeholder="Ask anything..." autocomplete="off" />
+        <button id="chat-send" onclick="sendMessage()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+      <div id="chat-footer-note">Powered by n8n workflow</div>
+    </div>
+  </div>
+
+  <!-- Bubble -->
+  <div id="chat-bubble" onclick="toggleChat()">
+    <div id="chat-badge">1</div>
+    <svg class="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </div>
+</div>

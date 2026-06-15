@@ -1,0 +1,7 @@
+@keyframes marquee-ltr {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee-track { display: flex; gap: 20px; width: max-content; animation: marquee-ltr 32s linear infinite; }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-wrap { overflow: hidden; width: 100%; mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); }

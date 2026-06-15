@@ -1,0 +1,34 @@
+<section id="contact" class="py-20 px-container-padding bg-surface border-t border-outline-variant/20">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="font-display-xl text-[42px] leading-tight text-on-surface mb-4">Get in touch</h2>
+      <p class="text-on-surface-variant font-body-lg text-body-lg">Have questions? We'd love to hear from you.</p>
+    </div>
+    <div class="bg-white/40 backdrop-blur-xl rounded-2xl border border-white/60 shadow-sm p-8 grid md:grid-cols-2 gap-8">
+      <div class="flex flex-col gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Full Name</label>
+          <input type="text" placeholder="John Smith" class="w-full bg-white/50 border border-white/60 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"/>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Email Address</label>
+          <input type="email" placeholder="john@example.com" class="w-full bg-white/50 border border-white/60 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"/>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Subject</label>
+          <input type="text" placeholder="How can we help?" class="w-full bg-white/50 border border-white/60 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"/>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div class="flex-1">
+          <label class="block text-sm font-semibold text-on-surface mb-1.5">Message</label>
+          <textarea placeholder="Tell us more about your project..." rows="6" class="w-full bg-white/50 border border-white/60 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"></textarea>
+        </div>
+        <button onclick="submitContact(this)" class="w-full bg-white/60 border border-white/70 text-on-surface font-semibold py-3.5 rounded-xl hover:bg-white/80 transition-all shadow-sm flex items-center justify-center gap-2">
+          <span>Send Message</span>
+          <span class="material-symbols-outlined text-[18px]">send</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

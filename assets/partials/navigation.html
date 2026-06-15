@@ -1,0 +1,134 @@
+<nav id="main-nav" class="fixed top-5 left-1/2 -translate-x-1/2 w-[93%] max-w-7xl rounded-full border border-white/50 bg-white/40 dark:bg-surface-dim/40 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.04)] z-50 flex justify-between items-center py-2.5 px-5">
+  <a class="flex items-center gap-2 text-on-surface" href="#hero" id="rodi-logo" title="Rodi — scroll progress">
+    <!-- Solar Scene Progress Logo -->
+    <div id="sun-logo-wrap" style="position:relative;width:80px;height:36px;flex-shrink:0;">
+      <svg id="sun-logo-svg" viewBox="0 0 80 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:80px;height:36px;overflow:visible;">
+        <defs>
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop id="skyTop" offset="0%" stop-color="#38BDF8" stop-opacity="0.22"/>
+            <stop id="skyBot" offset="100%" stop-color="#C084FC" stop-opacity="0.08"/>
+          </linearGradient>
+          <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#556500" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#556500" stop-opacity="0.04"/>
+          </linearGradient>
+          <filter id="beamGlow" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur stdDeviation="1.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="bodyGlow" x="-120%" y="-120%" width="340%" height="340%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <clipPath id="skyClip">
+            <rect x="0" y="0" width="80" height="28"/>
+          </clipPath>
+        </defs>
+
+        <!-- Sky -->
+        <rect x="0" y="0" width="80" height="28" rx="5" fill="url(#skyGrad)"/>
+
+        <!-- Stars (visible at night) -->
+        <g id="stars-group" opacity="0">
+          <circle cx="8"  cy="5"  r="0.8" fill="white" opacity="0.9"/>
+          <circle cx="20" cy="9"  r="0.6" fill="white" opacity="0.7"/>
+          <circle cx="35" cy="4"  r="0.7" fill="white" opacity="0.8"/>
+          <circle cx="50" cy="7"  r="0.5" fill="white" opacity="0.6"/>
+          <circle cx="65" cy="3"  r="0.8" fill="white" opacity="0.9"/>
+          <circle cx="72" cy="11" r="0.6" fill="white" opacity="0.7"/>
+          <circle cx="14" cy="14" r="0.5" fill="white" opacity="0.5"/>
+          <circle cx="58" cy="13" r="0.6" fill="white" opacity="0.6"/>
+        </g>
+
+        <!-- Arc path guide -->
+        <path id="arc-path" d="M 7 24 Q 40 2 73 24" stroke="#FF5E3A" stroke-width="0.7" stroke-opacity="0.2" stroke-dasharray="2 2.5" fill="none" clip-path="url(#skyClip)"/>
+
+        <!-- Ground -->
+        <rect x="0" y="28" width="80" height="8" fill="url(#groundGrad)"/>
+        <line x1="0" y1="28" x2="80" y2="28" stroke="#FF5E3A" stroke-width="0.8" stroke-opacity="0.2"/>
+
+        <!-- Solar Panels (3 panels on ground) -->
+        <!-- Panel 1: left -->
+        <g id="solar-panel-1" transform="translate(28,28)">
+          <line x1="0" y1="0" x2="0" y2="4" stroke="#888" stroke-width="0.8" stroke-linecap="round"/>
+          <g id="panel-tilt-1" transform="rotate(-15)">
+            <rect x="-4.5" y="-2.8" width="9" height="5.5" rx="0.8" fill="#1e3a5f" stroke="#326578" stroke-width="0.5"/>
+            <line x1="-1.5" y1="-2.8" x2="-1.5" y2="2.7" stroke="#326578" stroke-width="0.35" opacity="0.7"/>
+            <line x1="1.5"  y1="-2.8" x2="1.5"  y2="2.7" stroke="#326578" stroke-width="0.35" opacity="0.7"/>
+            <line x1="-4.5" y1="0"    x2="4.5"  y2="0"   stroke="#326578" stroke-width="0.35" opacity="0.7"/>
+            <rect x="-4.5" y="-2.8" width="9" height="5.5" rx="0.8" fill="white" opacity="0.04"/>
+          </g>
+          <line id="panel-beam-1" x1="0" y1="-2" x2="0" y2="-18" stroke="#FFD700" stroke-width="1" stroke-linecap="round" stroke-dasharray="1.5 2.5" opacity="0" filter="url(#beamGlow)"/>
+        </g>
+        <!-- Panel 2: center -->
+        <g id="solar-panel-2" transform="translate(40,28)">
+          <line x1="0" y1="0" x2="0" y2="5" stroke="#888" stroke-width="1" stroke-linecap="round"/>
+          <g id="panel-tilt-2" transform="rotate(-15)">
+            <rect x="-5.5" y="-3.2" width="11" height="6.4" rx="1" fill="#1e3a5f" stroke="#326578" stroke-width="0.5"/>
+            <line x1="-1.8" y1="-3.2" x2="-1.8" y2="3.2" stroke="#326578" stroke-width="0.4" opacity="0.7"/>
+            <line x1="1.8"  y1="-3.2" x2="1.8"  y2="3.2" stroke="#326578" stroke-width="0.4" opacity="0.7"/>
+            <line x1="-5.5" y1="0"    x2="5.5"  y2="0"   stroke="#326578" stroke-width="0.4" opacity="0.7"/>
+            <rect x="-5.5" y="-3.2" width="11" height="6.4" rx="1" fill="white" opacity="0.04"/>
+          </g>
+          <line id="panel-beam-2" x1="0" y1="-3" x2="0" y2="-22" stroke="#FFD700" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="2 3" opacity="0" filter="url(#beamGlow)"/>
+        </g>
+        <!-- Panel 3: right -->
+        <g id="solar-panel-3" transform="translate(52,28)">
+          <line x1="0" y1="0" x2="0" y2="4" stroke="#888" stroke-width="0.8" stroke-linecap="round"/>
+          <g id="panel-tilt-3" transform="rotate(-15)">
+            <rect x="-4.5" y="-2.8" width="9" height="5.5" rx="0.8" fill="#1e3a5f" stroke="#326578" stroke-width="0.5"/>
+            <line x1="-1.5" y1="-2.8" x2="-1.5" y2="2.7" stroke="#326578" stroke-width="0.35" opacity="0.7"/>
+            <line x1="1.5"  y1="-2.8" x2="1.5"  y2="2.7" stroke="#326578" stroke-width="0.35" opacity="0.7"/>
+            <line x1="-4.5" y1="0"    x2="4.5"  y2="0"   stroke="#326578" stroke-width="0.35" opacity="0.7"/>
+            <rect x="-4.5" y="-2.8" width="9" height="5.5" rx="0.8" fill="white" opacity="0.04"/>
+          </g>
+          <line id="panel-beam-3" x1="0" y1="-2" x2="0" y2="-18" stroke="#FFD700" stroke-width="1" stroke-linecap="round" stroke-dasharray="1.5 2.5" opacity="0" filter="url(#beamGlow)"/>
+        </g>
+
+        <!-- Celestial body: Sun or Moon -->
+        <g id="celestial-group" filter="url(#bodyGlow)">
+          <g id="sun-rays">
+            <line id="sr1" x1="0" y1="-6.5" x2="0" y2="-9.5"   stroke="#FF5E3A" stroke-width="1.2" stroke-linecap="round"/>
+            <line id="sr2" x1="0" y1="6.5"  x2="0" y2="9.5"    stroke="#FF5E3A" stroke-width="1.2" stroke-linecap="round"/>
+            <line id="sr3" x1="-6.5" y1="0" x2="-9.5" y2="0"   stroke="#FF5E3A" stroke-width="1.2" stroke-linecap="round"/>
+            <line id="sr4" x1="6.5"  y1="0" x2="9.5"  y2="0"   stroke="#FF5E3A" stroke-width="1.2" stroke-linecap="round"/>
+            <line id="sr5" x1="-4.6" y1="-4.6" x2="-6.7" y2="-6.7" stroke="#FF5E3A" stroke-width="1.2" stroke-linecap="round"/>
+            <line id="sr6" x1="4.6"  y1="-4.6" x2="6.7"  y2="-6.7" stroke="#FF5E3A" stroke-width="1.2" stroke-linecap="round"/>
+            <line id="sr7" x1="-4.6" y1="4.6"  x2="-6.7" y2="6.7"  stroke="#FF5E3A" stroke-width="1.2" stroke-linecap="round"/>
+            <line id="sr8" x1="4.6"  y1="4.6"  x2="6.7"  y2="6.7"  stroke="#FF5E3A" stroke-width="1.2" stroke-linecap="round"/>
+          </g>
+          <circle id="sun-core"  cx="0" cy="0" r="4.5" fill="#FF5E3A"/>
+          <circle id="sun-inner" cx="0" cy="0" r="2.8" fill="#FFD580" opacity="0.7"/>
+          <g id="moon-group" opacity="0">
+            <circle cx="0" cy="0" r="4.5" fill="#C8D8F0"/>
+            <circle cx="1.8" cy="-1" r="3.4" fill="#1a2a4a"/>
+            <circle cx="-1.5" cy="1.5" r="0.7" fill="#b0c4de" opacity="0.5"/>
+            <circle cx="0.8"  cy="-1.8" r="0.5" fill="#b0c4de" opacity="0.4"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <span style="font-size:13px;font-weight:500;letter-spacing:-0.01em;">Rodi</span>
+  </a>
+
+  <div class="hidden md:flex items-center gap-7">
+    <a class="nav-link" href="https://www.dmegcsolar.com/solution/index.html" target="_blank">Product &amp; Solution</a>
+    <a class="nav-link" href="https://www.dmegcsolar.com/innovate/index" target="_blank">Innovation</a>
+    <a class="nav-link" href="https://www.dmegcsolar.com/sustainability/index" target="_blank">ESG</a>
+    <a class="nav-link" href="https://www.dmegcsolar.com/download/index" target="_blank">Download</a>
+    <a class="nav-link" href="https://www.dmegcsolar.com/news/index" target="_blank">News</a>
+    <a class="nav-link" href="https://www.dmegcsolar.com/about/index" target="_blank">About us</a>
+  </div>
+
+  <div class="flex items-center gap-2">
+    <button id="dark-toggle" onclick="toggleDark()" class="w-8 h-8 rounded-full flex items-center justify-center bg-white/20 border border-white/40 hover:bg-white/40 transition-colors" title="Toggle dark mode">
+      <span class="material-symbols-outlined text-[15px] text-on-surface-variant" id="dark-icon">dark_mode</span>
+    </button>
+    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden w-8 h-8 rounded-full flex items-center justify-center bg-white/20 border border-white/40 hover:bg-white/40 transition-colors">
+      <span class="material-symbols-outlined text-[15px] text-on-surface-variant" id="menu-icon">menu</span>
+    </button>
+    <a class="hidden md:inline-flex items-center bg-white/30 text-on-surface border border-white/50 backdrop-blur-md px-5 py-1.5 rounded-full hover:bg-white/50 transition-colors duration-300" style="font-size:12.5px;font-weight:400;letter-spacing:0.01em;" href="#pricing">
+      Get Started
+    </a>
+  </div>
+</nav>
